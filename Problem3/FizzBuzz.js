@@ -6,6 +6,10 @@
  */
 
 const printFizzBuzz = (num = 100) => {
+  // checking the type of the num argument passed
+  if (typeof num !== 'number') {
+    return `Provide a Number`;
+  }
   // creating an array
   const array = Array.from({ length: num }, (_, index) => index + 1);
 
