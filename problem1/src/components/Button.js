@@ -2,7 +2,9 @@ import React, { memo } from 'react';
 import { useAppContext } from '../context/appContext';
 
 const Button = ({ handleClick }) => {
-  const { selectedColor } = useAppContext();
+  const { selectedColor, colorsCombo } = useAppContext();
+
+  console.log(colorsCombo);
 
   return (
     <div>
@@ -13,7 +15,15 @@ const Button = ({ handleClick }) => {
       >
         click me
       </button>
-      <p style={{ color: selectedColor }}>{selectedColor}</p>
+      <br />
+      {colorsCombo &&
+        colorsCombo.map((color, key) => {
+          return (
+            <span key={key} style={{ color: color }}>
+              {color},{' '}
+            </span>
+          );
+        })}
     </div>
   );
 };

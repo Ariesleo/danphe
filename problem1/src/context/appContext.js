@@ -4,6 +4,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 const initialValues = {
   selectedColor: 'red',
+  colorsCombo: [],
 };
 
 const AppContext = createContext();

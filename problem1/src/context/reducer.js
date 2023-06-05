@@ -10,6 +10,7 @@ const reducer = (state, action) => {
         ...state,
         selectedColor:
           state.selectedColor === 'blue' ? 'green' : colors[randomIndex],
+        colorsCombo: [...state.colorsCombo, state.selectedColor],
       };
 
     default:
